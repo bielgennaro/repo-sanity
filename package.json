@@ -1,0 +1,42 @@
+{
+  "name": "repo-sanity",
+  "version": "0.1.0",
+  "description": "CLI tool to audit the structural sanity of JavaScript and TypeScript repositories",
+  "license": "MIT",
+  "author": "bielgennaro",
+  "type": "module",
+  "bin": {
+    "repo-sanity": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsup src/index.ts --format esm --dts",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "release": "changeset publish"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "fast-glob": "^3.3.2",
+    "jsonc-parser": "^3.2.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.14",
+    "@changesets/cli": "^2.27.8",
+    "@types/node": "^20.11.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.2",
+    "vitest": "^1.3.1"
+  }
+}
